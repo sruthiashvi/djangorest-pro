@@ -16,8 +16,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url,include
+from rest_framework import routers
+from plans.api.viewsets import PrepaidViewSet,LoginViewSet
+#from rest_framework.authtoken.views import obtain_auth_token
+
+router=routers.DefaultRouter()
+router.register('plans',PrepaidViewSet) #automaticaly include crud methods
+router.register('login',LoginViewSet)
+#router.register(r'login',viewsets.LoginViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r"^",include("plans.urls"))
+    url(r"^",include("plans.urls")),
+    path('api/',include(router.urls)), #localhost:8000/api/plans/1/delete 
+   # path('auth/',obtain_auth_token)
 ]

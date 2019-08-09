@@ -11,3 +11,8 @@ class Prepaidplans(models.Model):
         ordering=("planprice",) #-planprice for reverse order #tuple so ,
     def __str__(self):
         return self.planname #display names in the admin panel
+class Login(models.Model):
+    name=models.CharField(max_length=100)
+    email=models.CharField(max_length=100)
+    password=models.CharField(max_length=100)
+    phone=models.CharField(max_length=100)
