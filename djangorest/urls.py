@@ -17,12 +17,13 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url,include
 from rest_framework import routers
-from plans.api.viewsets import PrepaidViewSet,LoginViewSet
+from plans.api.viewsets import PrepaidViewSet,LoginViewSet,InquiryViewSet
 #from rest_framework.authtoken.views import obtain_auth_token
 
 router=routers.DefaultRouter()
 router.register('plans',PrepaidViewSet) #automaticaly include crud methods
 router.register('login',LoginViewSet)
+router.register('inquiry',InquiryViewSet)
 #router.register(r'login',viewsets.LoginViewSet)
 
 urlpatterns = [
