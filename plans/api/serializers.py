@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from plans.models import Prepaidplans,Login,Inquiry
+from plans.models import Prepaidplans,Login,Inquiry,Recharge
 #from django.contrib.auth.models import User
 #from rest_framework.authtoken.models import Token
 class Prepaidserializer(serializers.ModelSerializer):
@@ -14,3 +14,7 @@ class InquirySerializer(serializers.ModelSerializer):
     class Meta:
          model=Inquiry
          fields=('id','name','phone','email','message')
+class RechargeSerializer(serializers.ModelSerializer):
+    class Meta:
+         model=Recharge
+         fields=('id','mobile','amount')
