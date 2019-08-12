@@ -1,5 +1,6 @@
 from rest_framework import serializers
-from .models import Prepaidplans
+from .models import Prepaidplans, Dongleplans
+
 class Prepaidserializer(serializers.Serializer): #convert to json format
     pk=serializers.IntegerField(read_only=True)
     planname=serializers.CharField(max_length=200)
@@ -18,3 +19,9 @@ class Prepaidserializer(serializers.Serializer): #convert to json format
         instance.plandes=validated_data.get("plandes",instance.plandes)
         instance.save()
         return instance
+class DongleSerializer(serializers.Serializer): #convert to json format
+    pk=serializers.IntegerField(read_only=True)
+    planname=serializers.CharField(max_length=100)
+    data=serializers.CharField(max_length=10)
+    validity=serializers.CharField(max_length=10)
+    price=serializers.CharField(max_length=10)

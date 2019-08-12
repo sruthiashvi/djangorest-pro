@@ -1,5 +1,5 @@
-from plans.models import Prepaidplans,Login,Inquiry,Recharge
-from plans.api.serializers import Prepaidserializer,LoginSerializer,InquirySerializer,RechargeSerializer
+from plans.models import Prepaidplans,Login,Inquiry,Recharge,Dongleplans
+from plans.api.serializers import Prepaidserializer,LoginSerializer,InquirySerializer,RechargeSerializer,DongleSerializer
 from rest_framework import viewsets
 from rest_framework.response import Response
 from django.contrib.auth.models import User
@@ -15,3 +15,7 @@ class InquiryViewSet(viewsets.ModelViewSet): #viewset methods:list,create,retrie
 class RechargeViewSet(viewsets.ModelViewSet): #viewset methods:list,create,retrieve,update,partial_update,destroy
     queryset=Recharge.objects.all()
     serializer_class=RechargeSerializer
+
+class DongleViewSet(viewsets.ModelViewSet): #viewset methods:list,create,retrieve,update,partial_update,destroy
+    queryset=Dongleplans.objects.all()
+    serializer_class=DongleSerializer

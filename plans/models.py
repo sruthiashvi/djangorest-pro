@@ -31,4 +31,16 @@ class Recharge(models.Model):
     amount=models.CharField(max_length=10)  
     def __str__(self):
         return self.mobile
-     
+
+class Dongleplans(models.Model):
+    planname=models.CharField(max_length=100)
+    data=models.CharField(max_length=10)
+    validity=models.CharField(max_length=10)
+    price=models.CharField(max_length=10)
+
+    class Meta:
+        ordering=('price',)
+        verbose_name='Dongleplan'
+    
+    def __str__(self):
+        return self.planname #display names in the admin panel
