@@ -9,7 +9,7 @@ class Prepaidserializer(serializers.ModelSerializer):
 class LoginSerializer(serializers.ModelSerializer):
     class Meta:
         model=Login
-        fields=('id','name','phone','email','password')
+        fields=('id','username','phone','email','password')
 class InquirySerializer(serializers.ModelSerializer):
     class Meta:
          model=Inquiry
