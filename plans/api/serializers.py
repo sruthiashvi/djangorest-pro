@@ -17,7 +17,7 @@ class InquirySerializer(serializers.ModelSerializer):
 class RechargeSerializer(serializers.ModelSerializer):
     class Meta:
          model=Recharge
-         fields=('id','mobile','amount')
+         fields=('id','mobile','amount','rdate')
 
 class DongleSerializer(serializers.ModelSerializer):
     class Meta:
