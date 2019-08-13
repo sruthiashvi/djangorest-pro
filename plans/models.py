@@ -30,7 +30,7 @@ class Recharge(models.Model):
     mobile=models.CharField(max_length=10) 
     amount=models.CharField(max_length=10)  
     rdate=models.CharField(max_length=50)
-    pid=models.IntegerField(max_length=3)
+    pid=models.CharField(max_length=10)
     def __str__(self):
         return self.mobile
 
