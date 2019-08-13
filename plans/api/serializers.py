@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from plans.models import Prepaidplans,Login,Inquiry,Recharge,Dongleplans,Feedback
+from plans.models import Prepaidplans,Login,Inquiry,Recharge,Dongleplans,Preform,Postform,Dongleform,Feedback
 #from django.contrib.auth.models import User
 #from rest_framework.authtoken.models import Token
 class Prepaidserializer(serializers.ModelSerializer):
@@ -9,7 +9,7 @@ class Prepaidserializer(serializers.ModelSerializer):
 class LoginSerializer(serializers.ModelSerializer):
     class Meta:
         model=Login
-        fields=('id','name','phone','email','password')
+        fields=('id','username','phone','email','password')
 class InquirySerializer(serializers.ModelSerializer):
     class Meta:
          model=Inquiry
@@ -17,7 +17,7 @@ class InquirySerializer(serializers.ModelSerializer):
 class RechargeSerializer(serializers.ModelSerializer):
     class Meta:
          model=Recharge
-         fields=('id','mobile','amount')
+         fields=('id','mobile','amount','rdate','pid')
 
 class DongleSerializer(serializers.ModelSerializer):
     class Meta:
@@ -28,3 +28,18 @@ class FeedbackSerializer(serializers.ModelSerializer):
         model=Feedback
         fields=('id','fname','femail','fsubject','fmessage')
 
+
+class PreformSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=Preform
+        fields=('id','name','email','mobile','address','city','pincode')
+
+class PostformSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=Postform
+        fields=('id','name','email','mobile','address','city','pincode')
+
+class DongleformSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=Dongleform
+        fields=('id','name','email','mobile','address','city','pincode')

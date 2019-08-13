@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Prepaidplans, Dongleplans
+from .models import Prepaidplans, Dongleplans,Preform,Postform,Dongleform
 
 class Prepaidserializer(serializers.Serializer): #convert to json format
     pk=serializers.IntegerField(read_only=True)
@@ -25,3 +25,30 @@ class DongleSerializer(serializers.Serializer): #convert to json format
     data=serializers.CharField(max_length=10)
     validity=serializers.CharField(max_length=10)
     price=serializers.CharField(max_length=10)
+
+class PreformSerializer(serializers.Serializer): #convert to json format
+    pk=serializers.IntegerField(read_only=True)
+    name=serializers.CharField(max_length=100)
+    email=serializers.CharField(max_length=50)
+    mobile=serializers.CharField(max_length=10)
+    address=serializers.CharField(max_length=100)
+    city=serializers.CharField(max_length=10)
+    pincode=serializers.CharField(max_length=6)
+
+class PostformSerializer(serializers.Serializer): #convert to json format
+    pk=serializers.IntegerField(read_only=True)
+    name=serializers.CharField(max_length=100)
+    email=serializers.CharField(max_length=50)
+    mobile=serializers.CharField(max_length=10)
+    address=serializers.CharField(max_length=100)
+    city=serializers.CharField(max_length=10)
+    pincode=serializers.CharField(max_length=6)
+
+class DongleformSerializer(serializers.Serializer): #convert to json format
+    pk=serializers.IntegerField(read_only=True)
+    name=serializers.CharField(max_length=100)
+    email=serializers.CharField(max_length=50)
+    mobile=serializers.CharField(max_length=10)
+    address=serializers.CharField(max_length=100)
+    city=serializers.CharField(max_length=10)
+    pincode=serializers.CharField(max_length=6)

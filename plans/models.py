@@ -12,7 +12,7 @@ class Prepaidplans(models.Model):
     def __str__(self):
         return self.planname #display names in the admin panel
 class Login(models.Model):
-    name=models.CharField(max_length=100)
+    username=models.CharField(max_length=100)
     email=models.CharField(max_length=100)
     password=models.CharField(max_length=100)
     phone=models.CharField(max_length=100)
@@ -29,6 +29,8 @@ class Inquiry(models.Model):
 class Recharge(models.Model):
     mobile=models.CharField(max_length=10) 
     amount=models.CharField(max_length=10)  
+    rdate=models.CharField(max_length=50)
+    pid=models.CharField(max_length=10)
     def __str__(self):
         return self.mobile
 
@@ -51,3 +53,48 @@ class Feedback(models.Model):
     fmessage=models.CharField(max_length=1000)
 
 
+
+class Preform(models.Model):
+    name=models.CharField(max_length=100)
+    email=models.CharField(max_length=50)
+    mobile=models.CharField(max_length=10)
+    address=models.CharField(max_length=100)
+    city=models.CharField(max_length=10)
+    pincode=models.CharField(max_length=6)
+
+    class Meta:
+        ordering=('name',)
+        verbose_name='Preform'
+    
+    def __str__(self):
+        return self.name
+
+class Postform(models.Model):
+    name=models.CharField(max_length=100)
+    email=models.CharField(max_length=50)
+    mobile=models.CharField(max_length=10)
+    address=models.CharField(max_length=100)
+    city=models.CharField(max_length=10)
+    pincode=models.CharField(max_length=6)
+
+    class Meta:
+        ordering=('name',)
+        verbose_name='Postform'
+    
+    def __str__(self):
+        return self.name
+
+class Dongleform(models.Model):
+    name=models.CharField(max_length=100)
+    email=models.CharField(max_length=50)
+    mobile=models.CharField(max_length=10)
+    address=models.CharField(max_length=100)
+    city=models.CharField(max_length=10)
+    pincode=models.CharField(max_length=6)
+
+    class Meta:
+        ordering=('name',)
+        verbose_name='Dongleform'
+    
+    def __str__(self):
+        return self.name
