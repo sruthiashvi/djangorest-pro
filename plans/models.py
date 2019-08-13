@@ -46,6 +46,13 @@ class Dongleplans(models.Model):
     
     def __str__(self):
         return self.planname #display names in the admin panel
+class Feedback(models.Model):
+    fname=models.CharField(max_length=100)
+    femail=models.CharField(max_length=100)
+    fsubject=models.CharField(max_length=100)
+    fmessage=models.CharField(max_length=1000)
+
+
 
 class Preform(models.Model):
     name=models.CharField(max_length=100)

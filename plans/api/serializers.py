@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from plans.models import Prepaidplans,Login,Inquiry,Recharge,Dongleplans,Preform,Postform,Dongleform
+from plans.models import Prepaidplans,Login,Inquiry,Recharge,Dongleplans,Preform,Postform,Dongleform,Feedback
 #from django.contrib.auth.models import User
 #from rest_framework.authtoken.models import Token
 class Prepaidserializer(serializers.ModelSerializer):
@@ -23,6 +23,11 @@ class DongleSerializer(serializers.ModelSerializer):
     class Meta:
         model=Dongleplans
         fields=('id','planname','data','validity','price')
+class FeedbackSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=Feedback
+        fields=('id','fname','femail','fsubject','fmessage')
+
 
 class PreformSerializer(serializers.ModelSerializer):
     class Meta:
