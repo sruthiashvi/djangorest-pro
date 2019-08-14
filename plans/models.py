@@ -6,7 +6,6 @@ class Prepaidplans(models.Model):
     planprice=models.FloatField()
     planduration=models.IntegerField()
     plandes=models.TextField()
-    
     class Meta:
         ordering=("planprice",) #-planprice for reverse order #tuple so ,
     def __str__(self):
@@ -87,14 +86,14 @@ class Postform(models.Model):
         return self.name
 
 class Dongleform(models.Model):
-    name=models.CharField(max_length=100)
+    name=models.CharField(max_length=110)
     email=models.CharField(max_length=50)
     mobile=models.CharField(max_length=10)
     address=models.CharField(max_length=100)
     city=models.CharField(max_length=10)
     pincode=models.CharField(max_length=6)
 
-+    class Meta:
+    class Meta:
         ordering=('name',)
         verbose_name='Dongleform'
     

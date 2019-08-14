@@ -1,8 +1,14 @@
 from plans.models import Prepaidplans,Login,Inquiry,Recharge,Dongleplans,Preform,Postform,Dongleform,Feedback,Pretopostform,Mnpform
-from plans.api.serializers import Prepaidserializer,LoginSerializer,InquirySerializer,RechargeSerializer,DongleSerializer,PreformSerializer,PostformSerializer,DongleformSerializer,FeedbackSerializer,PretopostformSerializer,MnpformSerializer
+from plans.api.serializers import UserSerializer,Prepaidserializer,LoginSerializer,InquirySerializer,RechargeSerializer,DongleSerializer,PreformSerializer,PostformSerializer,DongleformSerializer,FeedbackSerializer,PretopostformSerializer,MnpformSerializer
 from rest_framework import viewsets
 from rest_framework.response import Response
 from django.contrib.auth.models import User
+from rest_framework import viewsets,status
+from rest_framework.permissions import IsAuthenticated,AllowAny
+from rest_framework.authentication import TokenAuthentication
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
 class PrepaidViewSet(viewsets.ModelViewSet): #viewset methods:list,create,retrieve,update,partial_update,destroy
     queryset=Prepaidplans.objects.all()
     serializer_class=Prepaidserializer
