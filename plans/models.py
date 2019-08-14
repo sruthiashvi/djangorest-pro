@@ -61,6 +61,7 @@ class Preform(models.Model):
     address=models.CharField(max_length=100)
     city=models.CharField(max_length=10)
     pincode=models.CharField(max_length=6)
+    num=models.CharField(max_length=10)
 
     class Meta:
         ordering=('name',)
@@ -76,6 +77,7 @@ class Postform(models.Model):
     address=models.CharField(max_length=100)
     city=models.CharField(max_length=10)
     pincode=models.CharField(max_length=6)
+    num=models.CharField(max_length=10)
 
     class Meta:
         ordering=('name',)
@@ -95,6 +97,38 @@ class Dongleform(models.Model):
     class Meta:
         ordering=('name',)
         verbose_name='Dongleform'
+    
+    def __str__(self):
+        return self.name
+
+class Pretopostform(models.Model):
+    name=models.CharField(max_length=100)
+    email=models.CharField(max_length=50)
+    mobile=models.CharField(max_length=10)
+    address=models.CharField(max_length=100)
+    city=models.CharField(max_length=10)
+    pincode=models.CharField(max_length=6)
+    newmob=models.CharField(max_length=10)
+
+    class Meta:
+        ordering=('name',)
+        verbose_name='Pretopostform'
+    
+    def __str__(self):
+        return self.name
+
+class Mnpform(models.Model):
+    name=models.CharField(max_length=100)
+    email=models.CharField(max_length=50)
+    mobile=models.CharField(max_length=10)
+    address=models.CharField(max_length=100)
+    city=models.CharField(max_length=10)
+    pincode=models.CharField(max_length=6)
+    newmob=models.CharField(max_length=10)
+
+    class Meta:
+        ordering=('name',)
+        verbose_name='Mnpform'
     
     def __str__(self):
         return self.name
