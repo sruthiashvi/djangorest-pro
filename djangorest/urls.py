@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url,include
 from rest_framework import routers
-from plans.api.viewsets import PrepaidViewSet,LoginViewSet,InquiryViewSet,RechargeViewSet,DongleViewSet,PreformViewSet,PostformViewSet,DongleformViewSet,FeedbackViewSet
+from plans.api.viewsets import PrepaidViewSet,LoginViewSet,InquiryViewSet,RechargeViewSet,DongleViewSet,PreformViewSet,PostformViewSet,DongleformViewSet,FeedbackViewSet,PretopostformViewSet,MnpformViewSet
 #from rest_framework.authtoken.views import obtain_auth_token
 
 router=routers.DefaultRouter()
@@ -15,7 +15,9 @@ router.register('feedback',FeedbackViewSet)
 router.register('form1',PreformViewSet)
 router.register('form2',PostformViewSet)
 router.register('form3',DongleformViewSet)
+router.register('form4',PretopostformViewSet)
 
+router.register('form5',MnpformViewSet)
 #router.register(r'login',viewsets.LoginViewSet)
 
 urlpatterns = [
