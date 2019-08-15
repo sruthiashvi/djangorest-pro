@@ -18,10 +18,11 @@ class Login(models.Model):
     def __str__(self):
         return self.name
 class Inquiry(models.Model):
-    name=models.CharField(max_length=100)
+    name=models.CharField(max_length=60)
     email=models.CharField(max_length=100)
     phone=models.CharField(max_length=100)
     message=models.CharField(max_length=100)
+    postedby=models.CharField(max_length=15)
     def __str__(self):
         return self.name
 
@@ -30,6 +31,7 @@ class Recharge(models.Model):
     amount=models.CharField(max_length=10)  
     rdate=models.CharField(max_length=50)
     pid=models.CharField(max_length=10)
+    postedby=models.CharField(max_length=15)
     def __str__(self):
         return self.mobile
 
@@ -50,6 +52,7 @@ class Feedback(models.Model):
     femail=models.CharField(max_length=100)
     fsubject=models.CharField(max_length=100)
     fmessage=models.CharField(max_length=1000)
+    postedby=models.CharField(max_length=15)
 
 
 
@@ -61,6 +64,7 @@ class Preform(models.Model):
     city=models.CharField(max_length=10)
     pincode=models.CharField(max_length=6)
     num=models.CharField(max_length=10)
+    postedby=models.CharField(max_length=15)
 
     class Meta:
         ordering=('name',)
@@ -77,7 +81,7 @@ class Postform(models.Model):
     city=models.CharField(max_length=10)
     pincode=models.CharField(max_length=6)
     num=models.CharField(max_length=10)
-
+    postedby=models.CharField(max_length=15)
     class Meta:
         ordering=('name',)
         verbose_name='Postform'
@@ -92,6 +96,7 @@ class Dongleform(models.Model):
     address=models.CharField(max_length=100)
     city=models.CharField(max_length=10)
     pincode=models.CharField(max_length=6)
+    postedby=models.CharField(max_length=15)
 
     class Meta:
         ordering=('name',)
@@ -108,6 +113,7 @@ class Pretopostform(models.Model):
     city=models.CharField(max_length=10)
     pincode=models.CharField(max_length=6)
     newmob=models.CharField(max_length=10)
+    postedby=models.CharField(max_length=15)
 
     class Meta:
         ordering=('name',)
@@ -117,13 +123,14 @@ class Pretopostform(models.Model):
         return self.name
 
 class Mnpform(models.Model):
-    name=models.CharField(max_length=100)
+    name=models.CharField(max_length=50)
     email=models.CharField(max_length=50)
     mobile=models.CharField(max_length=10)
     address=models.CharField(max_length=100)
     city=models.CharField(max_length=10)
     pincode=models.CharField(max_length=6)
     newmob=models.CharField(max_length=10)
+    postedby=models.CharField(max_length=10)
 
     class Meta:
         ordering=('name',)

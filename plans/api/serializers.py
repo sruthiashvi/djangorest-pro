@@ -22,11 +22,11 @@ class LoginSerializer(serializers.ModelSerializer):
 class InquirySerializer(serializers.ModelSerializer):
     class Meta:
          model=Inquiry
-         fields=('id','name','phone','email','message')
+         fields=('id','name','phone','email','message','postedby')
 class RechargeSerializer(serializers.ModelSerializer):
     class Meta:
          model=Recharge
-         fields=('id','mobile','amount','rdate','pid')
+         fields=('id','mobile','amount','rdate','pid','postedby')
 
 class DongleSerializer(serializers.ModelSerializer):
     class Meta:
@@ -35,29 +35,29 @@ class DongleSerializer(serializers.ModelSerializer):
 class FeedbackSerializer(serializers.ModelSerializer):
     class Meta:
         model=Feedback
-        fields=('id','fname','femail','fsubject','fmessage')
+        fields=('id','fname','femail','fsubject','fmessage','postedby')
 
 
 class PreformSerializer(serializers.ModelSerializer):
     class Meta:
         model=Preform
-        fields=('id','name','email','mobile','address','city','pincode','num')
+        fields=('id','name','email','mobile','address','city','pincode','num','postedby')
 
 class PostformSerializer(serializers.ModelSerializer):
     class Meta:
         model=Postform
-        fields=('id','name','email','mobile','address','city','pincode','num')
+        fields=('id','name','email','mobile','address','city','pincode','num','postedby')
 
 class DongleformSerializer(serializers.ModelSerializer):
     class Meta:
         model=Dongleform
-        fields=('id','name','email','mobile','address','city','pincode')
+        fields=('id','name','email','mobile','address','city','pincode','postedby')
 class PretopostformSerializer(serializers.ModelSerializer):
     class Meta:
         model=Pretopostform
-        fields=('id','name','email','mobile','address','city','pincode','newmob')
+        fields=('id','name','email','mobile','address','city','pincode','newmob','postedby')
 
 class MnpformSerializer(serializers.ModelSerializer):
     class Meta:
         model=Mnpform
-        fields=('id','name','email','mobile','address','city','pincode','newmob')
+        fields=('id','name','email','mobile','address','city','pincode','newmob','postedby')
