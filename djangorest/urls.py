@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url,include
 from rest_framework import routers
-from plans.api.viewsets import UserViewSet,PrepaidViewSet,LoginViewSet,InquiryViewSet,RechargeViewSet,DongleViewSet,PreformViewSet,PostformViewSet,DongleformViewSet,FeedbackViewSet,PretopostformViewSet,MnpformViewSet
+from plans.api.viewsets import UsertestViewSet,UserViewSet,PrepaidViewSet,LoginViewSet,InquiryViewSet,RechargeViewSet,DongleViewSet,PreformViewSet,PostformViewSet,DongleformViewSet,FeedbackViewSet,PretopostformViewSet,MnpformViewSet
 from rest_framework.authtoken.views import obtain_auth_token
 
 router=routers.DefaultRouter()
@@ -17,6 +17,7 @@ router.register('form2',PostformViewSet)
 router.register('form3',DongleformViewSet)
 router.register('form4',PretopostformViewSet)
 router.register('users',UserViewSet)
+router.register('userbynum',UsertestViewSet)
 
 router.register('form5',MnpformViewSet)
 #router.register(r'login',viewsets.LoginViewSet)

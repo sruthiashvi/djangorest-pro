@@ -9,6 +9,11 @@ from rest_framework.authentication import TokenAuthentication
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+class UsertestViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer  
+    lookup_field='username'  
+
 class PrepaidViewSet(viewsets.ModelViewSet): #viewset methods:list,create,retrieve,update,partial_update,destroy
     queryset=Prepaidplans.objects.all()
     serializer_class=Prepaidserializer
