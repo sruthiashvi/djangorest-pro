@@ -26,6 +26,11 @@ class InquiryViewSet(viewsets.ModelViewSet): #viewset methods:list,create,retrie
 class RechargeViewSet(viewsets.ModelViewSet): #viewset methods:list,create,retrieve,update,partial_update,destroy
     queryset=Recharge.objects.all()
     serializer_class=RechargeSerializer
+    lookup_field='mobile'
+class RechargetestViewSet(viewsets.ModelViewSet): #viewset methods:list,create,retrieve,update,partial_update,destroy
+    queryset=Recharge.objects.all()
+    serializer_class=RechargeSerializer
+    lookup_field='postedby'
 
 class DongleViewSet(viewsets.ModelViewSet): #viewset methods:list,create,retrieve,update,partial_update,destroy
     queryset=Dongleplans.objects.all()
